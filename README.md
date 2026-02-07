@@ -83,4 +83,8 @@ The system solves the "Nearest Resource Problem" using the **Haversine Formula**
 The interactive map utilizes a custom **JavaScript Injection** into the Folium/Leaflet wrapper. By assigning unique internal IDs to the "Red," "Yellow," and "Green" data layers, the front-end buttons can trigger instant `removeLayer` and `addLayer` commands within the browser's DOM. This allows for instantaneous tactical filtering without requiring a server-side refresh.
 
 ---
+## Figma Prototype Link
+https://www.figma.com/proto/SoJlwO5yIiZvBq7Th2qSS0/Untitled?node-id=3-74&p=f&t=Nilb83uA7MWup60d-1&scaling=min-zoom&content-scaling=fixed&page-id=3%3A13&starting-point-node-id=3%3A74
+
+---
 *Developed for the **AI for Social Good** domain for **KRUU Grasp Hackathon 2026** by team **TechNova - A Jenita Roselin, Shameera Balkees & Yuvasri Eswara**.*
