@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Formation - Disaster Response AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>DisasterAI</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Notifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="report-section">
+        <div class="report-container">
+            <!-- Header -->
+            <div class="report-header">
+                <button class="back-button" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <h1 class="report-title">Report Formation</h1>
+                <div class="urgency-badge-large urgency-badge-large-critical" id="urgencyBadgeLarge">
+                    <span id="urgencyText">CRITICAL</span>
+                </div>
+            </div>
+
+            <div class="report-content">
+                <!-- Left Column: Report Details -->
+                <div class="report-details">
+                    <!-- Sender Information -->
+                    <section class="report-section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-user-circle"></i> Sender Information
+                        </h2>
+                        <div class="info-grid">
+                            <div class="info-field">
+                                <label>Name</label>
+                                <div class="field-value" id="senderName">—</div>
+                            </div>
+                            <div class="info-field">
+                                <label>Phone Number</label>
+                                <div class="field-value" id="senderPhone">—</div>
+                            </div>
+                            <div class="info-field">
+                                <label>Report Date & Time</label>
+                                <div class="field-value" id="reportDate">—</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SMS Message -->
+                    <section class="report-section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-comments"></i> Original SMS Message
+                        </h2>
+                        <div class="sms-bubble">
+                            <p id="smsText">—</p>
+                        </div>
+                    </section>
+
+                    <!-- Medical/Emergency Information -->
+                    <section class="report-section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-heart-pulse"></i> Emergency Details
+                        </h2>
+                        <div class="info-grid">
+                            <div class="info-field">
+                                <label>Type of Need</label>
+                                <div class="field-value need-badge" id="needType">
+                                    <i class="fas fa-box"></i> —
+                                </div>
+                            </div>
+                            <div class="info-field">
+                                <label>Quantity of People in Danger</label>
+                                <div class="field-value" id="quantity">—</div>
+                            </div>
+                            <div class="info-field">
+                                <label>Triage Level</label>
+                                <div class="field-value triage-badge" id="triageLevel">—</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Urgency & Risk Assessment -->
+                    <section class="report-section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-exclamation-triangle"></i> Risk Assessment
+                        </h2>
+                        <div class="urgency-score-container">
+                            <div class="score-display">
+                                <span class="score-number" id="urgencyScore">0</span>
+                                <span class="score-label">/100</span>
+                            </div>
+                            <div class="score-bar">
+                                <div class="score-fill" id="scoreFill"></div>
+                            </div>
+                        </div>
+                        <p class="score-description" id="scoreDescription">—</p>
+                    </section>
+
+                    <!-- Location Information -->
+                    <section class="report-section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-map-marker-alt"></i> Location Details
+                        </h2>
+                        <div class="info-grid">
+                            <div class="info-field">
+                                <label>Location Name</label>
+                                <div class="field-value" id="location">—</div>
+                            </div>
+                            <div class="info-field">
+                                <label>Latitude</label>
+                                <div class="field-value" id="latitude">—</div>
+                            </div>
+                            <div class="info-field">
+                                <label>Longitude</label>
+                                <div class="field-value" id="longitude">—</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Resources Required -->
+                    <section class="report-section-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-box"></i> Resources Required
+                        </h2>
+                        <div class="form-group">
+                            <label class="form-label">List the resources needed for this emergency</label>
+                            <textarea 
+                                id="resourcesInput" 
+                                class="resources-textarea" 
+                                placeholder="Enter resources needed: Medical supplies, food, water, shelter, rescue equipment, ambulances, etc."
+                                rows="5"
+                            ></textarea>
+                            <p class="field-hint">Be specific about quantities and types of resources needed</p>
+                        </div>
+                    </section>
+
+                    <!-- Actions & Final Send -->
+                    <section class="report-section-card actions-section">
+                        <div class="action-buttons">
+                            <button class="action-btn btn-primary" onclick="assignTicket()">
+                                <i class="fas fa-user-check"></i> Assign Ticket
+                            </button>
+                            <button class="action-btn btn-secondary" onclick="editReport()">
+                                <i class="fas fa-edit"></i> Edit Report
+                            </button>
+                            <button class="action-btn btn-danger" onclick="escalateReport()">
+                                <i class="fas fa-flag"></i> Escalate
+                            </button>
+                        </div>
+                        <button class="send-report-btn" onclick="sendFinalReport()">
+                            <i class="fas fa-paper-plane"></i> Send Finalized Report to Rescue Team
+                        </button>
+                    </section>
+                </div>
+
+                <!-- Right Column: Map -->
+                <div class="map-column">
+                    <section class="report-section-card map-card">
+                        <h2 class="section-title">
+                            <i class="fas fa-globe"></i> Map View
+                        </h2>
+                        <div id="map" class="map-container"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Ticket data (same as in dashboard)
+        const ticketsData = [
+            {
+                id: 1,
+                smsText: 'URGENT: 25 injured from building collapse in Kodambakkam. Need medical assistance immediately!',
+                timestamp: '2026-02-07 14:32',
+                senderPhone: '+91-9876-543210',
+                senderName: 'Rajesh Sharma',
+                need: 'Medical',
+                quantity: 25,
+                location: 'Kodambakkam, Chennai',
+                urgency: 'critical',
+                urgencyScore: 95,
+                latitude: 13.0011,
+                longitude: 80.2038,
+                triageLevel: 'critical'
+            },
+            {
+                id: 2,
+                smsText: '150 people stranded after flooding in Tambaram. Need food supplies and shelter assistance urgently.',
+                timestamp: '2026-02-07 14:28',
+                senderPhone: '+91-8765-432109',
+                senderName: 'Priya Desai',
+                need: 'Food',
+                quantity: 150,
+                location: 'Tambaram, Chennai',
+                urgency: 'high',
+                urgencyScore: 85,
+                latitude: 12.9226,
+                longitude: 80.1269,
+                triageLevel: 'high'
+            },
+            {
+                id: 3,
+                smsText: 'CRITICAL: 8 hikers trapped in Nilgiris forest fire. Helicopter rescue needed NOW. Lives in danger!',
+                timestamp: '2026-02-07 14:15',
+                senderPhone: '+91-9123-456789',
+                senderName: 'Captain Vikram Singh',
+                need: 'Rescue',
+                quantity: 8,
+                location: 'Nilgiris District, Ooty',
+                urgency: 'critical',
+                urgencyScore: 98,
+                latitude: 11.4102,
+                longitude: 76.7132,
+                triageLevel: 'critical'
+            },
+            {
+                id: 4,
+                smsText: 'Landslide isolated village in Coonoor. 80 people without food. Need emergency supplies delivery.',
+                timestamp: '2026-02-07 14:05',
+                senderPhone: '+91-7654-321098',
+                senderName: 'Ankit Patel',
+                need: 'Food',
+                quantity: 80,
+                location: 'Coonoor, Nilgiris',
+                urgency: 'high',
+                urgencyScore: 78,
+                latitude: 11.3515,
+                longitude: 76.8017,
+                triageLevel: 'high'
+            },
+            {
+                id: 5,
+                smsText: 'Heavy rainfall damage in Mylapore. 12 minor injuries. Need first aid supplies and medical assistance.',
+                timestamp: '2026-02-07 13:45',
+                senderPhone: '+91-9234-567890',
+                senderName: 'Dr. Neha Gupta',
+                need: 'Medical',
+                quantity: 12,
+                location: 'Mylapore, Chennai',
+                urgency: 'medium',
+                urgencyScore: 55,
+                latitude: 13.0369,
+                longitude: 80.2700,
+                triageLevel: 'medium'
+            },
+            {
+                id: 6,
+                smsText: 'URGENT: 3 people stranded in flooded Adyar river. Rescue boats needed urgently.',
+                timestamp: '2026-02-07 13:32',
+                senderPhone: '+91-8901-234567',
+                senderName: 'Arun Kumar',
+                need: 'Rescue',
+                quantity: 3,
+                location: 'Adyar, Chennai',
+                urgency: 'high',
+                urgencyScore: 88,
+                latitude: 13.0012,
+                longitude: 80.2506,
+                triageLevel: 'high'
+            },
+            {
+                id: 7,
+                smsText: 'Community center in T. Nagar sheltering 200 people after floods. Need meal supplies and assistance.',
+                timestamp: '2026-02-07 13:20',
+                senderPhone: '+91-9345-678901',
+                senderName: 'Divya Reddy',
+                need: 'Food',
+                quantity: 200,
+                location: 'T. Nagar, Chennai',
+                urgency: 'medium',
+                urgencyScore: 62,
+                latitude: 13.0369,
+                longitude: 80.2353,
+                triageLevel: 'medium'
+            },
+            {
+                id: 8,
+                smsText: 'School in Mettupalayam hit by storm. 5 minor injuries treated. First aid supplies need backup.',
+                timestamp: '2026-02-07 12:50',
+                senderPhone: '+91-7890-123456',
+                senderName: 'Suraj Malhotra',
+                need: 'Medical',
+                quantity: 5,
+                location: 'Mettupalayam, Nilgiris',
+                urgency: 'medium',
+                urgencyScore: 45,
+                latitude: 11.3082,
+                longitude: 76.5584,
+                triageLevel: 'medium'
+            }
+        ];
+
+        let map;
+        let marker;
+
+        // Get ticket ID from URL
+        function getTicketIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return parseInt(params.get('id'));
+        }
+
+        // Find ticket by ID
+        function getTicketById(id) {
+            return ticketsData.find(ticket => ticket.id === id);
+        }
+
+        // Get icon for need type
+        function getNeedIcon(need) {
+            const icons = {
+                'Medical': 'fa-hospital-user',
+                'Food': 'fa-utensils',
+                'Rescue': 'fa-helicopter'
+            };
+            return icons[need] || 'fa-box';
+        }
+
+        // Get urgency color
+        function getUrgencyColor(urgency) {
+            const colors = {
+                'critical': '#e63946',
+                'high': '#f77f00',
+                'medium': '#ffd60a'
+            };
+            return colors[urgency] || '#6fa3c8';
+        }
+
+        // Get urgency description
+        function getUrgencyDescription(score) {
+            if (score >= 90) return 'CRITICAL - Immediate action required';
+            if (score >= 75) return 'HIGH - Urgent attention needed';
+            if (score >= 50) return 'MEDIUM - Important but manageable';
+            return 'LOW - Standard priority';
+        }
+
+        // Initialize map
+        function initializeMap(lat, lng) {
+            map = L.map('map').setView([lat, lng], 13);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+
+            marker = L.circleMarker([lat, lng], {
+                radius: 12,
+                fillColor: '#4da3ff',
+                color: '#2f4a5a',
+                weight: 3,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map);
+
+            marker.bindPopup('<strong>Emergency Location</strong>');
+        }
+
+        // Populate report with ticket data
+        function populateReport(ticket) {
+            // Update urgency badge
+            const badge = document.getElementById('urgencyBadgeLarge');
+            badge.className = `urgency-badge-large urgency-badge-large-${ticket.urgency}`;
+            document.getElementById('urgencyText').textContent = ticket.urgency.toUpperCase();
+
+            // Update sender info
+            document.getElementById('senderName').textContent = ticket.senderName;
+            document.getElementById('senderPhone').textContent = ticket.senderPhone;
+            document.getElementById('reportDate').textContent = ticket.timestamp;
+
+            // Update SMS text
+            document.getElementById('smsText').textContent = ticket.smsText;
+
+            // Update emergency details
+            const needIcon = getNeedIcon(ticket.need);
+            document.getElementById('needType').innerHTML = `<i class="fas ${needIcon}"></i> ${ticket.need}`;
+            document.getElementById('quantity').textContent = `${ticket.quantity} people`;
+            
+            const triageElement = document.getElementById('triageLevel');
+            triageElement.className = `field-value triage-badge triage-${ticket.triageLevel}`;
+            triageElement.textContent = ticket.triageLevel.toUpperCase();
+
+            // Update urgency score
+            document.getElementById('urgencyScore').textContent = ticket.urgencyScore;
+            document.getElementById('scoreFill').style.width = ticket.urgencyScore + '%';
+            document.getElementById('scoreFill').style.backgroundColor = getUrgencyColor(ticket.urgency);
+            document.getElementById('scoreDescription').textContent = getUrgencyDescription(ticket.urgencyScore);
+
+            // Update location
+            document.getElementById('location').textContent = ticket.location;
+            document.getElementById('latitude').textContent = ticket.latitude.toFixed(4);
+            document.getElementById('longitude').textContent = ticket.longitude.toFixed(4);
+
+            // Initialize map
+            initializeMap(ticket.latitude, ticket.longitude);
+        }
+
+        // Action functions
+        function assignTicket() {
+            const ticket = getTicketById(getTicketIdFromUrl());
+            alert(`Ticket #${ticket.id} assigned to a responder.\nCritical: ${ticket.urgency === 'critical' ? 'YES' : 'NO'}`);
+        }
+
+        function editReport() {
+            alert('Edit functionality coming soon...');
+        }
+
+        function escalateReport() {
+            const ticket = getTicketById(getTicketIdFromUrl());
+            alert(`Ticket #${ticket.id} has been escalated to higher priority.`);
+        }
+
+        function sendFinalReport() {
+            const ticket = getTicketById(getTicketIdFromUrl());
+            const resources = document.getElementById('resourcesInput').value.trim();
+
+            if (!resources) {
+                alert('Please enter the resources needed before sending the report.');
+                return;
+            }
+
+            // Prepare final report data
+            const finalReport = {
+                ticketId: ticket.id,
+                senderName: ticket.senderName,
+                senderPhone: ticket.senderPhone,
+                location: ticket.location,
+                latitude: ticket.latitude,
+                longitude: ticket.longitude,
+                need: ticket.need,
+                quantity: ticket.quantity,
+                urgency: ticket.urgency,
+                urgencyScore: ticket.urgencyScore,
+                triageLevel: ticket.triageLevel,
+                originalSMS: ticket.smsText,
+                resourcesRequired: resources,
+                reportSentAt: new Date().toLocaleString('en-IN'),
+                reportId: 'RPT-' + Date.now()
+            };
+
+            // Show success message
+            alert(
+                `✅ Report Sent Successfully!\n\n` +
+                `Report ID: ${finalReport.reportId}\n` +
+                `Sent to: Rescue Team\n` +
+                `Time: ${finalReport.reportSentAt}\n\n` +
+                `Resources Requested:\n${resources}`
+            );
+
+            // Log the report (in real app, this would be sent to a server)
+            console.log('Final Report Sent:', finalReport);
+
+            // Reset form
+            document.getElementById('resourcesInput').value = '';
+        }
+
+        // Initialize page on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const ticketId = getTicketIdFromUrl();
+            const ticket = getTicketById(ticketId);
+            
+            if (ticket) {
+                populateReport(ticket);
+            } else {
+                alert('Ticket not found');
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>
