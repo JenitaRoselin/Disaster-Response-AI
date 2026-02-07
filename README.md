@@ -54,11 +54,10 @@ This tool was made to ensure that **the right resource reaches the right person 
 ---
 ## 7. File Directory & Execution Logic
 
-* **`ai_model.py`**: The central processing engine. It executes the 4-phase intelligence pipeline (NLP + GIS + NER + Triage) and generates the primary `final_report.csv`.
-* **`map_gen.py`**: The visualization layer. It parses the AI-generated dispatch data and injects a custom JavaScript control interface into a standalone `chennai_dispatch_map.html`.
-* **`test_need_loc.csv`**: The raw data input containing unstructured emergency text, reported landmarks, and ground-truth labels for performance validation.
-* **`available_resources.csv`**: The live resource inventory. A database of regional relief centers, hospitals, and stations indexed by their specific resource capabilities.
-* **`final_matched_report.csv`**: The optimized output. This file pairs every victim with the specific nearest resource center based on predicted needs and geospatial proximity.
+* **`model/ai_model.py`**: The central processing engine. It executes the 4-phase intelligence pipeline (NLP + GIS + NER + Triage) and generates the primary `final_report.csv`.
+* **`model/test_need_loc.csv`**: The raw data input containing unstructured emergency text, reported landmarks, and ground-truth labels for performance validation.
+* **`model/available_resources.csv`**: The live resource inventory. A database of regional relief centers, hospitals, and stations indexed by their specific resource capabilities.
+* **`model/final_matched_report.csv`**: The optimized output. This file pairs every victim with the specific nearest resource center based on predicted needs and geospatial proximity.
 * **`chennai_dispatch_map.html`**: The interactive command dashboard. Utilizes Leaflet.js to provide real-time filtering of emergency clusters.
 
 ---
