@@ -1,4 +1,5 @@
-# Disaster Response AI: End-to-End Triage & Resource Dispatch
+# CrisisFlow
+*Disaster Response AI: End-to-End Triage & Resource Dispatch*
 
 ---
 ## 1. About the Project
