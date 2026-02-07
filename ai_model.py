@@ -135,3 +135,66 @@ print("="*45)
 
 report_df.to_csv("final_report.csv", index=False)
 print("SUCCESS: 'final_report.csv' has been generated and prioritized.")
+
+import os
+from math import radians, cos, sin, asin, sqrt
+
+# --- HAVERSINE DISTANCE FUNCTION ---
+def get_distance(lat1, lon1, lat2, lon2):
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+    d = 2 * 6371 * asin(sqrt(sin((lat2-lat1)/2)**2 + cos(lat1)*cos(lat2)*sin((lon2-lon1)/2)**2))
+    return round(d, 2)
+
+# --- RESOURCE MATCHING ENGINE ---
+def match_best_resource(victim_row, res_df):
+    need = str(victim_row['Predicted_Need']).lower()
+    v_lat, v_lon = victim_row['Latitude'], victim_row['Longitude']
+    
+    # Filter centers that have the specific resource available (> 0)
+    if need in res_df.columns:
+        capable_centers = res_df[res_df[need] > 0].copy()
+    else:
+        capable_centers = res_df.copy() 
+
+    if capable_centers.empty:
+        return "No Resource Available", 0.0
+
+    # Find the closest capable center
+    capable_centers['dist'] = capable_centers.apply(
+        lambda r: get_distance(v_lat, v_lon, r['latitude'], r['longitude']), axis=1
+    )
+    
+    best_match = capable_centers.loc[capable_centers['dist'].idxmin()]
+    return best_match['location'], best_match['dist']
+
+# --- MAIN EXECUTION ---
+def run_final_dispatch():
+    # 1. Load data
+    try:
+        report_df = pd.read_csv("final_report.csv") 
+        res_df = pd.read_csv("available_resources.csv")
+    except FileNotFoundError:
+        print("Error: Ensure 'final_report.csv' and 'available_resources.csv' exist.")
+        return
+
+    print("Phase 5: Matching victims to resources...")
+    
+    # 2. Apply Matching
+    matches = report_df.apply(lambda row: match_best_resource(row, res_df), axis=1)
+    report_df['Assigned_Resource_Center'], report_df['Distance_km'] = zip(*matches)
+    
+    # We keep only what a rescue worker needs to see
+    dispatch_columns = [
+        "S.No", "Triage_Level", "Urgency_Score", "Predicted_Need", 
+        "Quantity", "Predicted_Location", "Latitude", "Longitude", 
+        "Assigned_Resource_Center", "Distance_km", "Original_Text"
+    ]
+    
+    final_dispatch_df = report_df[dispatch_columns].copy()
+    
+    # 4. Save clean file
+    final_dispatch_df.to_csv("final_matched_report.csv", index=False)
+    print("CLEAN DISPATCH GENERATED: 'final_matched_report.csv'")
+
+if __name__ == "__main__":
+    run_final_dispatch()
