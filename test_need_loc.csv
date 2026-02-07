@@ -1,0 +1,50 @@
+s.no,text,threat,vulnerability,environment,need,location_mentioned,lat_long,possible_landmark
+1,"""Water entering inside my home in mudichur hie till knee. 2 kids stuck pls help""",Rising water,CHILDREN,ACTIVELY DETERIORATING,RESCUE BOAT,Mudichur,"12.9230, 80.0631",Mudichur Main Road
+2,"""veetukula thanni varudhu pls help quick. 4 ppl here mambalam station""",Rising water,MULTIPLE PEOPLE,ACTIVELY DETERIORATING,RESCUE BOAT,Mambalam Station,"13.0333, 80.2307",West Mambalam
+3,"""vellam adhigama iruku stranded on terrace near phoenix mall velachery no food""",Stranded,DEFAULT,STABLE,FOOD,"Phoenix Mall, Velachery","12.9915, 80.2223",Velachery
+4,"""Water rising fast in perungudi near toll plaza. Grandma cant walk pls hlp""",Rising water,ELDERLY,ACTIVELY DETERIORATING,RESCUE BOAT,Perungudi Toll Plaza,"12.9647, 80.2468",OMR
+5,"""Full water on road nungambakkam area stranded in car water touching door help""",Rising water,DEFAULT,ACTIVELY DETERIORATING,RESCUE BOAT,Nungambakkam,"13.0583, 80.2400",Nungambakkam High Rd
+6,"""Enga veetla water uptill terrace. 3 infants and 1 disabled person. help soon""",Stranded,"INFANT, DISABLED",STABLE,HELICOPTER,Maduravoyal,"13.0673, 80.1630",Maduravoyal Flyover
+7,"""Velachery water high fast flow help pls stuck in apartment 2nd floor""",Fast current,DEFAULT,ACTIVELY DETERIORATING,RESCUE BOAT,Apartment 2nd Floor (General),"13.0827, 80.2707",Chennai City Center
+8,"""Help water entering 1st floor in t nagar 4 ppl stuck no way out""",Trapped,DEFAULT,ACTIVELY DETERIORATING,RESCUE BOAT,T Nagar,"13.0305, 80.2330",Pondy Bazaar Area
+9,"""House submerged in pallikaranai help urgently 5 people""",Submerged,DEFAULT,STABLE,RESCUE BOAT,Pallikaranai,"12.9348, 80.2137",Pallikaranai Marshlands
+10,"""Water high in chromepet help 3 children and pregnant woman stranded""",Stranded,"CHILDREN, PREGNANT",STABLE,RESCUE BOAT,Chromepet,"12.9443, 80.1378",Chromepet Station
+11,"""Grandpa fell down unconsious in anna nagar send ambulence fast""",Unconscious,ELDERLY,ACTIVELY DETERIORATING,AMBULANCE,Anna Nagar,"13.0850, 80.2101",Anna Nagar Tower Park
+12,"""Pls help child bleed head injury near dav school maduravoyal""",Bleeding,CHILDREN,ACTIVELY DETERIORATING,AMBULANCE,"Dav School, (Adambakkam)","12.9892, 80.2078",Adambakkam
+13,"""Accident near guindy flyover 2 people hurt very bad send help""",Injury,DEFAULT,ACTIVELY DETERIORATING,AMBULANCE,Guindy Flyover,"13.0110, 80.2217",Guindy Junction
+14,"""Pregnant lady in labour pain no car moving in water help near omr""",Labour pain,PREGNANT,ACTIVELY DETERIORATING,AMBULANCE,OMR,"12.9249, 80.2314",Old Mahabalipuram Rd
+15,"""Sugar patient no insulin since 2 days in perambur pls bring medicine""",Medical condition,ELDERLY,STABLE,MEDICINE,Perambur,"13.1067, 80.2400",Perambur Railway Stn
+16,"""High fever child 104 deg no way to hospital in water help""",High fever,CHILDREN,ACTIVELY DETERIORATING,AMBULANCE,(General Chennai),"13.0827, 80.2707",HQ Search Center
+17,"""Snake bite in flood water help near tambaram area""",Snake bite,DEFAULT,ACTIVELY DETERIORATING,AMBULANCE,Tambaram,"12.9229, 80.1275",Tambaram East
+18,"""My husband chest pain help fast address 12th street kk nagar""",Chest pain,DEFAULT,ACTIVELY DETERIORATING,AMBULANCE,"KK Nagar, 12th Street","13.0358, 80.2050",KK Nagar
+19,"""Infected wound not healing need doctor help near royapettah""",Infection,DEFAULT,STABLE,MEDICINE,Royapettah,"13.0537, 80.2638",Royapettah Hospital
+20,"""Old man breathing problem no oxygen left help near egmore""",Breathing issue,ELDERLY,ACTIVELY DETERIORATING,AMBULANCE,Egmore,"13.0732, 80.2609",Egmore Station
+21,"""No food for 2 days in saidapet kids are crying pls send food packets""",Hunger,CHILDREN,STABLE,FOOD,Saidapet,"13.0213, 80.2231",Saidapet Bridge
+22,"""Thirst help no drinking water for 24 hrs in anna nagar east""",Dehydration,DEFAULT,STABLE,WATER,Anna Nagar East,"13.0878, 80.2200",East Anna Nagar
+23,"""Power cut for 3 days no charge in phone help near porur""",Power cut,DEFAULT,STABLE,ELECTRICITY,Porur,"13.0382, 80.1544",Porur Junction
+24,"""Need milk for baby in madippakam water high around house""",Infant hunger,INFANT,STABLE,FOOD,Madipakkam,"12.9647, 80.1961",Madipakkam Lake Area
+25,"""No current and no water in triplicane help soon""",Utility outage,DEFAULT,STABLE,WATER,Triplicane,"13.0587, 80.2757",Parthasarathy Temple
+26,"""Stranded in office near tidel park no food or water help""",Stranded,DEFAULT,STABLE,FOOD,Tidel Park,"12.9895, 80.2476",Taramani
+27,"""Building no water for flush or drinking 20 people stuck""",Utility outage,DEFAULT,STABLE,WATER,(General Chennai),"13.0827, 80.2707",Utility Response Zone
+28,"""Need candle and matchbox in royapuram dark since morning""",Power cut,DEFAULT,STABLE,ELECTRICITY,Royapuram,"13.1137, 80.2954",Royapuram Pier
+29,"""Medicine finish for heart patient in ambattur help""",Medicine shortage,ELDERLY,STABLE,MEDICINE,Ambattur,"13.1143, 80.1548",Ambattur OT
+30,"""Hungry 5 people in terrace near kotturpuram help""",Hunger,DEFAULT,STABLE,FOOD,Kotturpuram,"13.0234, 80.2415",Kotturpuram Bridge
+31,"""Smoke in building near parrys corner help stuck in 4th floor""",Smoke inhalation,DEFAULT,ACTIVELY DETERIORATING,FIRE ENGINE,Parrys Corner,"13.0894, 80.2878",High Court Area
+32,"""Child stuck in tree high up can't reach help near sholinganallur""",Height,CHILDREN,STABLE,FIRE ENGINE,Sholinganallur,"12.8996, 80.2277",Sholinganallur Jct
+33,"""Building fire help t nagar silk shop area people trapped""",Fire,DEFAULT,ACTIVELY DETERIORATING,FIRE ENGINE,"T Nagar, Silk Shop","13.0318, 80.2325",Usman Road
+34,"""Trapped on roof water rising no way down near marina beach""",Stranded,DEFAULT,ACTIVELY DETERIORATING,HELICOPTER,Marina Beach,"13.0500, 80.2824",Marina Lighthouse
+35,"""Old lady stuck in lift in thiruvanmiyur power cut help""",Trapped,ELDERLY,STABLE,FIRE ENGINE,Thiruvanmiyur,"12.9830, 80.2594",Thiruvanmiyur Bus Dep
+36,"""Fire in house due to short circuit help fast in kolathur""",Fire,DEFAULT,ACTIVELY DETERIORATING,FIRE ENGINE,Kolathur,"13.1245, 80.2117",Kolathur
+37,"""Building wall collapsed near koyambedu help 2 people under""",Wall collapse,DEFAULT,ACTIVELY DETERIORATING,FIRE ENGINE,Koyambedu,"13.0694, 80.1948",CMBT Bus Terminus
+38,"""Tree fallen on house blocking door help in besant nagar""",Blockage,DEFAULT,STABLE,FIRE ENGINE,Besant Nagar,"13.0003, 80.2667",Elliot's Beach
+39,"""Gas leak smell in valasaravakkam help quick""",Gas leak,DEFAULT,ACTIVELY DETERIORATING,FIRE ENGINE,Valasaravakkam,"13.0398, 80.1764",Valasaravakkam
+40,"""Transformer fire in my street help fast""",Fire,DEFAULT,ACTIVELY DETERIORATING,FIRE ENGINE,(User Street),"13.0827, 80.2707",Transformer Unit
+41,"""Pls help child on broken branch can't reach! help""",Height,CHILDREN,ACTIVELY DETERIORATING,FIRE ENGINE,(Local Search),"13.0827, 80.2707",Emergency Response
+42,"""My kids stuck in school building fire spreading help fast""",Fire,CHILDREN,ACTIVELY DETERIORATING,FIRE ENGINE,(Local Search),"13.0827, 80.2707",School Safety Zone
+43,"""Water touching my feet on terrace help fast rising""",Stranded,DEFAULT,ACTIVELY DETERIORATING,HELICOPTER,(Local Search),"13.0827, 80.2707",Rising Water Zone
+44,"""No power in ashok nagar 5th avenue for 2 days help""",Power cut,DEFAULT,STABLE,ELECTRICITY,"Ashok Nagar, 5th Ave","13.0355, 80.2121",Ashok Nagar
+45,"""Stuck in flood water near temple water flow is high""",Fast current,DEFAULT,ACTIVELY DETERIORATING,RESCUE BOAT,(Local Search),"13.0827, 80.2707",Fast Current Area
+46,"""Building cracking sounds help Koyambedu""",Structural risk,DEFAULT,ACTIVELY DETERIORATING,FIRE ENGINE,Koyambedu,"13.0694, 80.1948",Structural Risk Zone
+47,"""Water till neck in house help can't swim""",Drowning risk,DEFAULT,ACTIVELY DETERIORATING,RESCUE BOAT,(Home Search),"13.0827, 80.2707",Rescue Zone
+48,"""Infant sick and vomiting non stop help OMR""",Medical,INFANT,ACTIVELY DETERIORATING,AMBULANCE,OMR,"12.9249, 80.2314",OMR Medical Transit
+49,"""Beside park help people crying for food""",Hunger,DEFAULT,STABLE,FOOD,Beside Park,"13.0827, 80.2707",Public Park Area

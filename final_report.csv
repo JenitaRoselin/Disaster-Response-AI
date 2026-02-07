@@ -1,0 +1,50 @@
+S.No,Triage_Level,Urgency_Score,Predicted_Need,Quantity,Predicted_Location,Latitude,Longitude,Original_Text,Actual_Need,Actual_Loc
+27,red,40.0,drinking water,20 people,chennai general,13.0827,80.2707,"""Building no water for flush or drinking 20 people stuck""",water,(general chennai)
+2,red,32.0,fire engine,4 ppl,mambalam station,13.0333,80.2307,"""veetukula thanni varudhu pls help quick. 4 ppl here mambalam station""",rescue boat,mambalam station
+13,yellow,26.0,ambulance,2 people,guindy flyover,13.011,80.2217,"""Accident near guindy flyover 2 people hurt very bad send help""",ambulance,guindy flyover
+16,yellow,23.0,ambulance,not given,chennai general,13.0827,80.2707,"""High fever child 104 deg no way to hospital in water help""",ambulance,(general chennai)
+14,yellow,23.0,ambulance,not given,omr,12.9249,80.2314,"""Pregnant lady in labour pain no car moving in water help near omr""",ambulance,omr
+11,yellow,23.0,ambulance,not given,anna nagar,13.085,80.2101,"""Grandpa fell down unconsious in anna nagar send ambulence fast""",ambulance,anna nagar
+17,yellow,23.0,ambulance,not given,tambaram,12.9229,80.1275,"""Snake bite in flood water help near tambaram area""",ambulance,tambaram
+40,yellow,23.0,fire engine,not given,chennai general,13.0827,80.2707,"""Transformer fire in my street help fast""",fire engine,(user street)
+12,yellow,23.0,ambulance,not given,maduravoyal,13.0673,80.163,"""Pls help child bleed head injury near dav school maduravoyal""",ambulance,"dav school, (adambakkam)"
+35,yellow,23.0,ambulance,not given,thiruvanmiyur,12.983,80.2594,"""Old lady stuck in lift in thiruvanmiyur power cut help""",fire engine,thiruvanmiyur
+33,yellow,23.0,fire engine,not given,t nagar,13.0305,80.233,"""Building fire help t nagar silk shop area people trapped""",fire engine,"t nagar, silk shop"
+32,yellow,23.0,ambulance,not given,sholinganallur,12.8996,80.2277,"""Child stuck in tree high up can't reach help near sholinganallur""",fire engine,sholinganallur
+30,yellow,23.0,food,5 people,kotturpuram,13.0234,80.2415,"""Hungry 5 people in terrace near kotturpuram help""",food,kotturpuram
+20,yellow,23.0,ambulance,not given,egmore,13.0732,80.2609,"""Old man breathing problem no oxygen left help near egmore""",ambulance,egmore
+29,yellow,23.0,ambulance,not given,ambattur,13.1143,80.1548,"""Medicine finish for heart patient in ambattur help""",medicine,ambattur
+18,yellow,23.0,ambulance,not given,t nagar,13.0305,80.233,"""My husband chest pain help fast address 12th street kk nagar""",ambulance,"kk nagar, 12th street"
+39,yellow,23.0,fire engine,not given,valasaravakkam,13.0398,80.1764,"""Gas leak smell in valasaravakkam help quick""",fire engine,valasaravakkam
+36,yellow,23.0,fire engine,not given,kolathur,13.1245,80.2117,"""Fire in house due to short circuit help fast in kolathur""",fire engine,kolathur
+41,yellow,23.0,ambulance,not given,chennai general,13.0827,80.2707,"""Pls help child on broken branch can't reach! help""",fire engine,(local search)
+48,yellow,23.0,ambulance,not given,omr,12.9249,80.2314,"""Infant sick and vomiting non stop help OMR""",ambulance,omr
+25,yellow,21.0,rescue boat,not given,triplicane,13.0587,80.2757,"""No current and no water in triplicane help soon""",water,triplicane
+9,yellow,17.0,error,5 people,pallikaranai,12.9348,80.2137,"""House submerged in pallikaranai help urgently 5 people""",rescue boat,pallikaranai
+15,yellow,17.0,medicine,not given,perambur,13.1067,80.24,"""Sugar patient no insulin since 2 days in perambur pls bring medicine""",medicine,perambur
+19,yellow,17.0,medicine,not given,royapettah,13.0537,80.2638,"""Infected wound not healing need doctor help near royapettah""",medicine,royapettah
+10,yellow,15.0,shelter,3 children,chromepet,12.9443,80.1378,"""Water high in chromepet help 3 children and pregnant woman stranded""",rescue boat,chromepet
+8,green,14.0,error,4 ppl,t nagar,13.0305,80.233,"""Help water entering 1st floor in t nagar 4 ppl stuck no way out""",rescue boat,t nagar
+22,green,13.0,drinking water,not given,anna nagar,13.085,80.2101,"""Thirst help no drinking water for 24 hrs in anna nagar east""",water,anna nagar east
+37,green,12.0,shelter,2 people,koyambedu,13.0694,80.1948,"""Building wall collapsed near koyambedu help 2 people under""",fire engine,koyambedu
+1,green,12.0,shelter,2 kids,mudichur,12.923,80.0631,"""Water entering inside my home in mudichur hie till knee. 2 kids stuck pls help""",rescue boat,mudichur
+3,green,11.0,food,not given,"phoenix mall, velachery",12.9915,80.2223,"""vellam adhigama iruku stranded on terrace near phoenix mall velachery no food""",food,"phoenix mall, velachery"
+21,green,11.0,food,not given,saidapet,13.0213,80.2231,"""No food for 2 days in saidapet kids are crying pls send food packets""",food,saidapet
+24,green,11.0,food,not given,madipakkam,12.9647,80.1961,"""Need milk for baby in madippakam water high around house""",food,madipakkam
+6,green,11.0,error,3 infants,chennai general,13.0827,80.2707,"""Enga veetla water uptill terrace. 3 infants and 1 disabled person. help soon""",helicopter,maduravoyal
+49,green,11.0,food,not given,beside park,13.0827,80.2707,"""Beside park help people crying for food""",food,beside park
+26,green,11.0,food,not given,tidel park,12.9895,80.2476,"""Stranded in office near tidel park no food or water help""",food,tidel park
+42,green,9.0,shelter,not given,chennai general,13.0827,80.2707,"""My kids stuck in school building fire spreading help fast""",fire engine,(local search)
+34,green,9.0,shelter,not given,marina beach,13.05,80.2824,"""Trapped on roof water rising no way down near marina beach""",helicopter,marina beach
+38,green,9.0,shelter,not given,besant nagar,13.0003,80.2667,"""Tree fallen on house blocking door help in besant nagar""",fire engine,besant nagar
+31,green,9.0,shelter,not given,parrys corner,13.0894,80.2878,"""Smoke in building near parrys corner help stuck in 4th floor""",fire engine,parrys corner
+23,green,9.0,shelter,not given,porur,13.0382,80.1544,"""Power cut for 3 days no charge in phone help near porur""",electricity,porur
+28,green,9.0,shelter,not given,royapuram,13.1137,80.2954,"""Need candle and matchbox in royapuram dark since morning""",electricity,royapuram
+45,green,9.0,shelter,not given,chennai general,13.0827,80.2707,"""Stuck in flood water near temple water flow is high""",rescue boat,(local search)
+44,green,9.0,shelter,not given,"ashok nagar, 5th ave",13.0355,80.2121,"""No power in ashok nagar 5th avenue for 2 days help""",electricity,"ashok nagar, 5th ave"
+47,green,9.0,shelter,not given,chennai general,13.0827,80.2707,"""Water till neck in house help can't swim""",rescue boat,(home search)
+43,green,9.0,shelter,not given,chennai general,13.0827,80.2707,"""Water touching my feet on terrace help fast rising""",helicopter,(local search)
+46,green,9.0,shelter,not given,koyambedu,13.0694,80.1948,"""Building cracking sounds help Koyambedu""",fire engine,koyambedu
+5,green,5.0,error,not given,nungambakkam,13.0583,80.24,"""Full water on road nungambakkam area stranded in car water touching door help""",rescue boat,nungambakkam
+7,green,5.0,error,not given,chennai general,13.0827,80.2707,"""Velachery water high fast flow help pls stuck in apartment 2nd floor""",rescue boat,apartment 2nd floor (general)
+4,green,5.0,error,not given,chennai general,13.0827,80.2707,"""Water rising fast in perungudi near toll plaza. Grandma cant walk pls hlp""",rescue boat,perungudi toll plaza
